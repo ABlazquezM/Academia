@@ -22,9 +22,13 @@ public class CursoServiceImpl implements CursoService{
 
 	@Override
 	public CursoDTO crearCurso(CursoDTO cursoDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		CursoEntity cursoEntity = cursoRepository.save(cursoMappers.cursoDTOToCursoEntity(cursoDTO));
+		
+		return cursoMappers.cursoEntityToCursoDTO(cursoEntity);
 	}
+	
+	
 
 	@Override
 	public CursoDTO obtenerCurso(Long cursoId) {

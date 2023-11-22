@@ -27,10 +27,10 @@ public class EstudianteServiceImpl implements EstudianteService {
 	@Override
 	public EstudianteDTO crearEstudiante(EstudianteDTO estudianteDTO) {
 
-		EstudianteEntity esE = estudianteRepository
+		EstudianteEntity estudianteEntity = estudianteRepository
 				.save(estudianteMappers.mapEstudianteDTOtoEstudianteEntity(estudianteDTO));
 
-		return estudianteMappers.mapEstudianteEntitytoEstudianteDTO(esE);
+		return estudianteMappers.mapEstudianteEntitytoEstudianteDTO(estudianteEntity);
 	}
 	
 	@Override
